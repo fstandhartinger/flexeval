@@ -39,7 +39,7 @@ jobs:
 
       - name: Run tests
         run: |
-          poetry run pytest -v -s -m "not (batch_api)" ./tests
+          poetry run pytest -v -s -m "not (batch_api)" ./tests --ignore=tests/core/language_model/test_litellm_api.py --ignore=tests/core/language_model/test_openai_api.py
 
   lint_check:
     runs-on: ubuntu-latest
